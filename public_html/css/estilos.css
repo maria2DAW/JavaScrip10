@@ -1,0 +1,21 @@
+html{
+    font-size: 16px;
+}
+
+div{
+    padding: 4rem; /*rem = root em (nodo raiz) --> toman como base el tamaño de letra del documento HTML*/
+    font-size: 2rem;
+    text-align: center;
+}
+
+.uno{
+    background-color: red;
+}
+
+.dos{
+    background-color: green;
+}
+
+.tres{
+    background-color: blue;
+}
