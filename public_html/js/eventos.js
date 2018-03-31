@@ -17,8 +17,11 @@
  *        obejor.removeEventListener('evento', función, boolean (default=false));
  *        
  *        document.querySelector('#parrafo').addEventListener('click', hola);
- *        document.querySelector('#parrafo').removeEventListener('click', hola);  
- */
+ *        document.querySelector('#parrafo').removeEventListener('click', hola);
+ *        
+ *        -Boolean = false --> Fase de burbuja (Elemento más interno al más exteno)
+ *        -Boolean = true --> Fase de captura (Elemento más externo al más interno)
+ */       
 
 /*
  * 
@@ -40,12 +43,18 @@ function hola(evento)
     
     this.style.backgroundColor = '';
     
+    evento.stopPropagation(); //Para evitar la propagación del evento a los demás elementos
+    
     //document.querySelector('#parrafo').removeEventListener('click', hola);
 }
 
 for(var i = 0; i < divs.length; i++)
 {
-    divs[i].addEventListener('click', hola)
+    //Fase de burbuja:
+    divs[i].addEventListener('click', hola);
+    
+    //Fase de captura
+    //divs[i].addEventListener('click', hola, true);
 }
 
 
